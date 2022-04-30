@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Routes, Route, Link } from "react-router-dom";
 import './App.scss';
 import Home from './pages/Home';
 import Form from './pages/Form';
@@ -8,15 +8,15 @@ function App() {
   
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} >
         </Route>
         <Route path=":task" element={<ModifyTodo />} />
         <Route path="form" element={<Form />} />
         <Route path="modifytodo" element={<ModifyTodo />} />
-    </Routes>
-    </Router>
+      </Routes>
+    </HashRouter>
   );
 }
 
