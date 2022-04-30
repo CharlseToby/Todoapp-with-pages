@@ -1,0 +1,235 @@
+$primaryColor: #fff;
+$mainWidth: 380px;
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: "Titillium Web", sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 10px;
+  width: $mainWidth;
+  margin: 0 auto;
+}
+
+/* --------HEADER-------- */
+.header {
+  width: $mainWidth;
+  height: 200px;
+  background-image: url("./assets/images/bg.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+
+  .clear {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    i {
+      font-size: 30px;
+      color: $primaryColor;
+    }
+    i:hover {
+      cursor: pointer;
+      text-shadow: 1px 3px 5px #000;
+      transform: rotate(45deg);
+    }
+  }
+  .page{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: $primaryColor;
+    font-size: 20px;
+    font-family: "Titillium Web",
+    sans-serif;
+
+    a{
+      list-style-type: none;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+  }
+
+
+  .date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: $primaryColor;
+    font-size: 20px;
+    font-family: "Titillium Web", sans-serif;
+  }
+  .uncheckedItem {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: $primaryColor;
+    font-size: 22px;
+    font-family: "Titillium Web", sans-serif;
+  }
+}
+
+/* ---------- THE CONTENT ---------- */
+.content {
+  width: $mainWidth;
+  min-height: 350px;
+  max-height: 500px;
+  background-color: $primaryColor;
+  overflow-y: scroll;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  .item {
+    width: 362px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+
+    .endTime{
+      position: absolute;
+      top: 13px;
+      right: 70px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .co {
+      position: absolute;
+      font-size: 25px;
+      padding-left: 5px;
+      left: 15px;
+      top: 10px;
+    }
+    .co:hover {
+      cursor: pointer;
+    }
+    .fa-check-circle {
+      color: #6eb200;
+    }
+    p.text {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+      left: 50px;
+      top: 7px;
+      background-color: $primaryColor;
+      max-width: 285px;
+    }
+    .lineThrough {
+      text-decoration: line-through;
+      color: #ccc;
+    }
+    p.modify{
+      position: absolute;
+      right: 44px;
+      bottom: -1px;
+      cursor: pointer;
+    }
+    .de {
+      position: absolute;
+      font-size: 18px;
+      outline: none;
+      border: none;
+      background-color: inherit;
+      right: 8px;
+      top: 10px;
+    }
+    .de:hover {
+      color: #af0000;
+      cursor: pointer;
+    }
+  }
+}
+
+/* ----- ADD ITEM SECTION ----- */
+.add-to-do {
+  // position: relative;
+  width: 350px;
+  height: auto;
+  background-color: $primaryColor;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  .form-control{
+    display: grid;
+    grid-template-columns: 90px 250px;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      flex-grow: 2;
+      // position: absolute;
+      // left: 65px;
+      height: 30px;
+      // width: 230px;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      outline: none;
+      font-size: 20px;
+      padding-left: 10px;
+    }
+  }
+
+  button {
+    // position: absolute;
+    border: 1px solid #4162f6;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    color: #4162f6;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+}
+.add-to-do input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+}
+.add-to-do input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+}
+.add-to-do input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+}
+.add-to-do input:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+}
