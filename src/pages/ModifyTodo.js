@@ -44,10 +44,12 @@ const ModifyTodo = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if(todoTask.trim()){
-      setTodoTask("");
       modifiedTodo = {...oldTodo, task: todoTask};
       let newStorageTodos = [...filteredTodos, modifiedTodo];
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newStorageTodos));
+      setTodoTask("");
+      setStartTime("");
+      setEndTime("");
       // setTodos([...filteredTodos, modifiedTodo])
       // console.log(modifiedTodo);
     }
