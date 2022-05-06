@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -10,6 +10,7 @@ const ModifyTodo = () => {
   const [todos, setTodos] = useState(storageTodos);
 
   let params = useParams();
+  const navigate = useNavigate();
   
     // console.log(params.task);
     
@@ -43,17 +44,18 @@ const ModifyTodo = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if(todoTask.trim()){
+    if(todoTask.trim() && todoEndTime && todoStartTime){
       modifiedTodo = {...oldTodo, task: todoTask};
       let newStorageTodos = [...filteredTodos, modifiedTodo];
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newStorageTodos));
       setTodoTask("");
       setStartTime("");
       setEndTime("");
-      // setTodos([...filteredTodos, modifiedTodo])
-      // console.log(modifiedTodo);
+      navigate("/");
+    }else {
+      alert("No empty field allowed")
     }
-    // console.log(task);
+  
   }
  
   const options = {weekday : "long", month:"short", day:"numeric"};

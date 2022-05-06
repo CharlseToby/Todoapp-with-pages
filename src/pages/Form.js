@@ -20,7 +20,7 @@ const Form = () => {
 
   function addTodo(todo) {
     setTodos([todo, ...todos]);
-    alert("Todo added");
+    // alert("Todo added");
   }
 
   const options = {weekday : "long", month:"short", day:"numeric"};
